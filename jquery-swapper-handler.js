@@ -8,9 +8,9 @@
  * https://twitter.com/CaryLandholt
  *
  * Description
- * Swap DOM content based on matching ids
+ * Swap DOM content based on matching identifiers
  * Can be used as a convention-based handler to replace DOM content with content returned via an AJAX call, for example.
- * If the id(s) in the returned content match any in the DOM, the matching DOM elements will be replaced.
+ * If the identifier(s) in the returned content match any in the DOM, the matching DOM elements will be replaced.
  *
  * Dependency
  * jquery.swap
