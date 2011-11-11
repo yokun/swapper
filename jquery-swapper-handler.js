@@ -12,9 +12,9 @@
  * Can be used as a convention-based handler to replace DOM content with content returned via an AJAX call, for example.
  * If the identifier(s) in the returned content match any in the DOM, the matching DOM elements will be replaced.
  *
- * Dependency
- * jquery.swap
+ * Dependencies
  * https://github.com/CaryLandholt/jquery.swap
+ * https://github.com/CaryLandholt/jquery-pubsub
  *
  * Registration
  * $.subscribe('/ajax/received/success/html', $.handlers.swapper);
