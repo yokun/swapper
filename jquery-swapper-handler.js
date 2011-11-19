@@ -23,7 +23,7 @@
  * http://jsfiddle.net/carylandholt/48Udy/
  */
 
-/*global jQuery*/
+/*global define*/
 
 define(['jquery', 'handlers', 'pubsub'], function ($, handlers) {
 	'use strict';
