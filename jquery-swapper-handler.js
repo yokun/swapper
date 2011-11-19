@@ -25,7 +25,7 @@
 
 /*global jQuery*/
 
-(function ($, handlers) {
+define(['jquery', 'handlers', 'pubsub'], function ($, handlers) {
 	'use strict';
 
 	handlers.swapper = function (e, jqXHR, ajaxOptions, data, options) {
@@ -43,4 +43,4 @@
 			swapperComplete: '/swapper/complete'
 		}
 	};
-}(jQuery, jQuery.handlers = jQuery.handlers || {}));
+});
