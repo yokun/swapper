@@ -25,7 +25,7 @@
 
 /*global define*/
 
-define(['jquery', 'handlers', 'pubsub'], function ($, handlers) {
+define(['jquery', 'handlers', 'pubsub', 'swap'], function ($, handlers) {
 	'use strict';
 
 	handlers.swapper = function (e, jqXHR, ajaxOptions, data, options) {
