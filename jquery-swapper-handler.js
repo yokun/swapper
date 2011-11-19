@@ -23,9 +23,9 @@
  * http://jsfiddle.net/carylandholt/48Udy/
  */
 
-/*global define*/
+/*global require*/
 
-define(['jquery', 'handlers', 'pubsub', 'swap'], function ($, handlers) {
+require(['jquery', 'handlers', 'pubsub', 'swap'], function ($, handlers) {
 	'use strict';
 
 	handlers.swapper = function (e, jqXHR, ajaxOptions, data, options) {
