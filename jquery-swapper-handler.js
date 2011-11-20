@@ -23,18 +23,18 @@
  * http://jsfiddle.net/carylandholt/48Udy/
  */
 
-/*global require*/
+/*global define*/
 
-require(['jquery', 'handlers', 'pubsub', 'swap'], function ($, handlers) {
+define(['jquery', 'handlers', 'pubsub', 'swap'], function ($, handlers, pubsub) {
 	'use strict';
 
 	handlers.swapper = function (e, jqXHR, ajaxOptions, data, options) {
 		var settings = $.extend({}, handlers.swapper.defaults, options),
 			events = settings.events;
 
-		$.publish(events.swapper, ajaxOptions);
+		pubsub.publish(events.swapper, ajaxOptions);
 		$(data).swap(options);
-		$.publish(events.swapperComplete, ajaxOptions);
+		pubsub.publish(events.swapperComplete, ajaxOptions);
 	};
 
 	handlers.swapper.defaults = {
@@ -43,4 +43,6 @@ require(['jquery', 'handlers', 'pubsub', 'swap'], function ($, handlers) {
 			swapperComplete: '/swapper/complete'
 		}
 	};
+
+	return handlers.swapper;
 });
