@@ -1,6 +1,6 @@
 /*!
  * jquery-swapper-handler
- * Version:  1.0.0
+ * Version:  1.1.0
  * Source:  https://github.com/CaryLandholt/jquery-swapper-handler
  *
  * Copyright (c) 2011 Cary Landholt
@@ -14,7 +14,7 @@
  *
  * Dependencies
  * https://github.com/CaryLandholt/jquery.swap
- * https://github.com/CaryLandholt/jquery-pubsub
+ * https://github.com/CaryLandholt/publish
  *
  * Registration
  * $.subscribe('/ajax/received/success/html', $.handlers.swapper);
@@ -25,16 +25,16 @@
 
 /*global define*/
 
-define(['jquery', 'handlers', 'pubsub', 'swap'], function ($, handlers, pubsub) {
+define(['jquery', 'handlers', 'publish', 'swap'], function ($, handlers, publish) {
 	'use strict';
 
 	handlers.swapper = function (e, jqXHR, ajaxOptions, data, options) {
 		var settings = $.extend({}, handlers.swapper.defaults, options),
 			events = settings.events;
 
-		pubsub.publish(events.swapper, ajaxOptions);
+		publish(events.swapper, ajaxOptions);
 		$(data).swap(options);
-		pubsub.publish(events.swapperComplete, ajaxOptions);
+		publish(events.swapperComplete, ajaxOptions);
 	};
 
 	handlers.swapper.defaults = {
