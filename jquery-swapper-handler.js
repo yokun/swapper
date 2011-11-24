@@ -13,11 +13,12 @@
  * If the identifier(s) in the returned content match any in the DOM, the matching DOM elements will be replaced.
  *
  * Dependencies
- * https://github.com/CaryLandholt/jquery.swap
+ * https://github.com/jquery/jquery
  * https://github.com/CaryLandholt/publish
+ * https://github.com/CaryLandholt/jquery.swap
  *
  * Registration
- * $.subscribe('/ajax/received/success/html', $.handlers.swapper);
+ * subscribe('/ajax/received/success/html', swapper);
  *
  * Usage
  * http://jsfiddle.net/carylandholt/48Udy/
@@ -32,14 +33,14 @@ define(['jquery', 'handlers', 'publish', 'swap'], function ($, handlers, publish
 		var settings = $.extend({}, handlers.swapper.defaults, options),
 			events = settings.events;
 
-		publish(events.swapper, ajaxOptions);
+		publish(events.swapperStarted, ajaxOptions);
 		$(data).swap(options);
 		publish(events.swapperComplete, ajaxOptions);
 	};
 
 	handlers.swapper.defaults = {
 		events: {
-			swapper: '/swapper',
+			swapperStarted: '/swapper/started',
 			swapperComplete: '/swapper/complete'
 		}
 	};
