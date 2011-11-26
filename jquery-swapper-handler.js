@@ -26,11 +26,13 @@
 
 /*global define*/
 
-define(['jquery', 'handlers', 'publish', 'swap'], function ($, handlers, publish) {
+define(['jquery', 'publish', 'swap'], function ($, publish) {
 	'use strict';
 
-	handlers.swapper = function (e, jqXHR, ajaxOptions, data, options) {
-		var settings = $.extend({}, handlers.swapper.defaults, options),
+	var module = {};
+
+	module = function (e, jqXHR, ajaxOptions, data, options) {
+		var settings = $.extend({}, module.defaults, options),
 			events = settings.events;
 
 		publish(events.swapperStarted, ajaxOptions);
@@ -38,12 +40,12 @@ define(['jquery', 'handlers', 'publish', 'swap'], function ($, handlers, publish
 		publish(events.swapperComplete, ajaxOptions);
 	};
 
-	handlers.swapper.defaults = {
+	module.defaults = {
 		events: {
 			swapperStarted: '/swapper/started',
 			swapperComplete: '/swapper/complete'
 		}
 	};
 
-	return handlers.swapper;
+	return module;
 });
