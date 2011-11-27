@@ -13,6 +13,7 @@
  * If the identifier(s) in the returned content match any in the DOM, the matching DOM elements will be replaced.
  *
  * Dependencies
+ * https://github.com/jrburke/requirejs
  * https://github.com/jquery/jquery
  * https://github.com/CaryLandholt/publish
  * https://github.com/CaryLandholt/jquery.swap
