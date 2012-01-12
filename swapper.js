@@ -1,7 +1,7 @@
 /*!
- * jquery-swapper-handler
- * Version:  1.1.0
- * Source:  https://github.com/CaryLandholt/jquery-swapper-handler
+ * swapper
+ * Version:  1.2.0
+ * Source:  https://github.com/CaryLandholt/swapper
  *
  * Copyright (c) 2011 Cary Landholt
  * https://github.com/CaryLandholt
